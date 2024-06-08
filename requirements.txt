@@ -1,1 +1,2 @@
 zenml[server]==0.58.1
+pandas==2.2.2
