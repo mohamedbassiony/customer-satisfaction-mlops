@@ -43,6 +43,12 @@ $ pip install -r requirements.txt
 $ zenml init
 ```
 
+### Install the zenml up for Dashbord
+
+```bash
+$ zenml up
+```
+
 ### Setup the environment variables
 
 ```bash
