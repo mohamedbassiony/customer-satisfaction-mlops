@@ -43,7 +43,13 @@ $ pip install -r requirements.txt
 $ zenml init
 ```
 
-### Install the zenml up for Dashbord
+### Activate the zenml down for restart
+
+```bash
+$ zenml up
+```
+
+### Activate the zenml up for restart
 
 ```bash
 $ zenml up
