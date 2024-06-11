@@ -49,6 +49,7 @@ class DataPreprocessStrategy(DataStrategy):
             data = data.drop(cols_to_drop, axis=1)
 
             return data
+        
         except Exception as e:
             logging.error(e)
             raise e
@@ -88,3 +89,9 @@ class DataCleaning:
     def handle_data(self) -> Union[pd.DataFrame, pd.Series]:
         """Handle data based on the provided strategy"""
         return self.strategy.handle_data(self.df)
+    
+
+# if __name__ == "__main__":
+#     data = pd.read_csv("./data")
+#     data_cleaning = DataCleaning(data, DataPreprocessStrategy())
+#     data_cleaning.handle_data()
