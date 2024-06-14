@@ -46,13 +46,28 @@ $ zenml init
 ### Activate the zenml down for restart
 
 ```bash
-$ zenml up
+$ zenml down
 ```
 
 ### Activate the zenml up for restart
 
 ```bash
 $ zenml up
+```
+
+If you are running the `run_deployment.py` script, you will also need to install some integrations using ZenML:
+
+```bash
+zenml integration install mlflow -y
+```
+
+The project can only be executed with a ZenML stack that has an MLflow experiment tracker and model deployer as a component. Configuring a new stack with the two components are as follows:
+
+```bash
+zenml integration install mlflow -y
+zenml experiment-tracker register mlflow_tracker_customer --flavor=mlflow
+zenml model-deployer register mlflow_customer --flavor=mlflow
+zenml stack register mlflow_stack_customer -a default -o default -d mlflow_customer -e mlflow_tracker_customer --set
 ```
 
 ### Setup the environment variables
